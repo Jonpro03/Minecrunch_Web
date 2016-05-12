@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{444D8947-069E-4A0B-802B-B7A501D38E2F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D813BECA-2020-41B0-9BDA-65EE5B3B2DDA}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "minecrunch.web", "src\minecrunch.web\minecrunch.web.xproj", "{D2C036A3-BED8-4A70-8B43-B1E7353F9762}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{C575E0F6-5980-41B2-B60E-5414FD0931F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{7E4B6C8C-B402-4D9A-8F4D-EB629FDC78AB}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{0307F77F-3AB8-44AD-8E71-338FB4E5BBBA}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\minecrunchweb.json = PublishScripts\Templates\minecrunchweb.json
+		PublishScripts\Templates\minecrunchweb.param.dev.json = PublishScripts\Templates\minecrunchweb.param.dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2C036A3-BED8-4A70-8B43-B1E7353F9762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2C036A3-BED8-4A70-8B43-B1E7353F9762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2C036A3-BED8-4A70-8B43-B1E7353F9762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2C036A3-BED8-4A70-8B43-B1E7353F9762}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D2C036A3-BED8-4A70-8B43-B1E7353F9762} = {444D8947-069E-4A0B-802B-B7A501D38E2F}
+		{7E4B6C8C-B402-4D9A-8F4D-EB629FDC78AB} = {C575E0F6-5980-41B2-B60E-5414FD0931F0}
+		{0307F77F-3AB8-44AD-8E71-338FB4E5BBBA} = {C575E0F6-5980-41B2-B60E-5414FD0931F0}
+	EndGlobalSection
+EndGlobal

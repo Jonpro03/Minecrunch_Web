@@ -1,0 +1,32 @@
+{
+  "siteName": {
+    "value": "minecrunchweb"
+  },
+  "hostingPlanName": {
+    "value": "minecrunchweb"
+  },
+  "siteLocation": {
+    "value": "North Central US"
+  },
+  "sku": {
+    "value": "Free"
+  },
+  "workerSize": {
+    "value": "0"
+  },
+  "serverName": {
+    "value": "minecrunch-sql"
+  },
+  "serverLocation": {
+    "value": "North Central US"
+  },
+  "administratorLogin": {
+    "value": "minecrunch"
+  },
+  "administratorLoginPassword": {
+    "value": "min3#jonisawesome"
+  },
+  "databaseName": {
+    "value": "minecrunchweb_db"
+  }
+}
