@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 60px;
     padding-bottom: 20px;
 }
 
@@ -8,6 +8,53 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+body {
+    background-color: #EFEBE9;
+    font-family: "RobotoDraft","Roboto",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.navbar-fixed-top {
+    background: #388E3C;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #E8F5E9;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: #795548;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #1B5E20;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #C8E6C9;
+}
+
+.navbar-fixed-top {
+    top: 0px;
+    min-height: 60px;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    border-width: 0 0 0px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #E8F5E9;
+    background-color: transparent;
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
