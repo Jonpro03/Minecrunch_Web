@@ -90,6 +90,12 @@ namespace minecrunch.web
 
             app.UseIdentity();
 
+            app.UseGoogleAuthentication(options => 
+            {
+                options.ClientId = "359688600464-3nu3jlm0p0ifd8145km72rg0e2j8eekl.apps.googleusercontent.com";
+                options.ClientSecret = "iWrlLCEG_jCYT--mFWvHgRua";
+            });
+
             // To configure external authentication please see http://go.microsoft.com/fwlink/?LinkID=532715
 
             app.UseMvc(routes =>
