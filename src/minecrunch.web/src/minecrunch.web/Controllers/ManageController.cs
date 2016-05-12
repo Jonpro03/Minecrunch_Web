@@ -276,7 +276,7 @@ namespace minecrunch.web.Controllers
             }
             var userLogins = await _userManager.GetLoginsAsync(user);
             var otherLogins = _signInManager.GetExternalAuthenticationSchemes().Where(auth => userLogins.All(ul => auth.AuthenticationScheme != ul.LoginProvider)).ToList();
-            ViewData["ShowRemoveButton"] = user.PasswordHash != null || userLogins.Count > 1;
+            ViewData["ShowRemoveButton"] = user.PasswordHash != null || userLogins.Count > 0;
             return View(new ManageLoginsViewModel
             {
                 CurrentLogins = userLogins,
