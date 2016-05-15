@@ -17,13 +17,13 @@
     padding-right: 15px;
 }
 
-.form-group {
+body > .container {
     background-color: #4E342E;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.26);
 }
 
-.form-label {
+.form-label, h2 {
     min-height: 12px;
     background-color: #3E2723;
     border-radius: 5px 5px 0px 0px;
