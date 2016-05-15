@@ -18,6 +18,11 @@ body {
     font-weight: 500;
 }
 
+.menu-button {
+    height: 40px;
+    padding-top: 10px;
+}
+
 .navbar-fixed-top {
     background: #388E3C;
 }
@@ -29,7 +34,7 @@ body {
 .navbar-inverse .navbar-brand {
     color: #FFFFFF;
     font-size: 20px;
-    height: 60px;
+    height: 80px;
 }
 
 
