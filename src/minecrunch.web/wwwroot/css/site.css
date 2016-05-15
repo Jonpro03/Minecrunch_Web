@@ -1,8 +1,12 @@
 ﻿body {
-    padding-top: 90px;
     padding-bottom: 20px;
     background-color: #2E7D32;
     color: white;
+    margin-bottom: 60px;
+}
+
+footer {
+    position: static;
 }
 
 .well {
@@ -23,21 +27,40 @@ body > .container {
     box-shadow: 0 2px 5px rgba(0,0,0,0.26);
 }
 
-.form-label, h2 {
-    min-height: 12px;
+.form-label {
+    min-height: 20px;
+    font-size: 24px;
+    font-weight: bold;
     background-color: #3E2723;
     border-radius: 5px 5px 0px 0px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.26);
     padding: 6px;
 }
 
+.form-content {
+    background-color: #795548;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    padding: 16px;
+}
+
+.form-content > img {
+    width: 100%;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #3E2723;
+}
+
 .menu-button {
-    height: 40px;
+    max-height: 40px;
     padding-top: 10px;
 }
 
 .navbar-fixed-top {
     background: #1B5E20;
+    position: static;
     
 }
 
