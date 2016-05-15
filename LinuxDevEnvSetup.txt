@@ -23,6 +23,8 @@ cd Minecrunch_Web
 git checkout develop
 cd src
 
+export Hosting__Environment=Development
+
 dnu restore
 
 code .
