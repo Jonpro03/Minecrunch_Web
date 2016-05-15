@@ -23,7 +23,6 @@ cd Minecrunch_Web
 git checkout develop
 cd src
 
-dnu install Microsoft.AspNet.Server.Kestrel.Https
 dnu restore
 
 code .
@@ -37,4 +36,4 @@ Wait for the prompt to restart and restart
 
 Start the webserver by running the following from src/minecrunch.web
 
-dnx webs
+dnx web
