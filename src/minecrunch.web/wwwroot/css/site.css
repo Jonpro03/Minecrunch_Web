@@ -1,6 +1,13 @@
 ﻿body {
-    padding-top: 60px;
+    padding-top: 90px;
     padding-bottom: 20px;
+    background-color: #2E7D32;
+    color: white;
+}
+
+.well {
+    border: none;
+    background-color: inherit;
 }
 
 /* Wrapping element */
@@ -10,12 +17,18 @@
     padding-right: 15px;
 }
 
-body {
-    background-color: #EFEBE9;
-    font-family: "RobotoDraft","Roboto",sans-serif;
-    -webkit-font-smoothing: antialiased;
-    font-size: 18px;
-    font-weight: 500;
+.form-group {
+    background-color: #4E342E;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+}
+
+.form-label {
+    min-height: 12px;
+    background-color: #3E2723;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    padding: 6px;
 }
 
 .menu-button {
@@ -24,7 +37,8 @@ body {
 }
 
 .navbar-fixed-top {
-    background: #388E3C;
+    background: #1B5E20;
+    
 }
 
 .navbar-inverse .navbar-nav > li > a {
