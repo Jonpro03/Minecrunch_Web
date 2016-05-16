@@ -6,14 +6,14 @@
 <div class="row well-lg">
     <div class="form-label">@ViewData["Title"]</div>
     <div class="form-content">
-        <h3>Associate your @ViewData["LoginProvider"] account:</h3>
+        <h3>Associating your @ViewData["LoginProvider"] account:</h3>
 
         <form asp-controller="Account" asp-action="ExternalLoginConfirmation" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form">
             <h4>Account Association</h4>
             <hr />
             <div asp-validation-summary="ValidationSummary.All" class="text-danger"></div>
 
-            <p class="text-info">
+            <p class="">
                 You've successfully authenticated us with <strong>@ViewData["LoginProvider"]</strong>.
                 Please enter the email address you prefer to recieve notifications from 
                 and click the Register button to finish logging in.
