@@ -16,7 +16,7 @@ sudo dpkg -i vscode-amd64.deb
 
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 
-sudo npm install -g yo grunt-cli generator-aspnet bower
+sudo npm install -g yo grunt-cli generator-aspnet bower gulp
 
 git clone https://github.com/Jonpro03/Minecrunch_Web
 cd Minecrunch_Web
