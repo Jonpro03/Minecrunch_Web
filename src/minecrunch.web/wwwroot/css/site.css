@@ -2,7 +2,6 @@
     padding-bottom: 20px;
     background-color: #2E7D32;
     color: white;
-    margin-bottom: 60px;
 }
 
 footer {
@@ -19,12 +18,13 @@ footer {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+/*    margin-right: 6px;
+    margin-left: 6px; */
 }
 
 body > .container {
     background-color: #4E342E;
-    border-radius: 5px 5px 5px 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.26);
 }
 
 .form-label {
