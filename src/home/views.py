@@ -9,3 +9,11 @@ def index(request):
     template = loader.get_template('home/home.html')
 
     return HttpResponse(template.render())
+
+
+# Create your views here.
+def modpacks(request):
+    
+    template = loader.get_template('home/modpacks.html')
+
+    return HttpResponse(template.render())

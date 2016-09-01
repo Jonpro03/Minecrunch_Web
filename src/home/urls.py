@@ -3,4 +3,5 @@ from home import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^modpacks$', views.modpacks, name='modpacks'),
 ]
