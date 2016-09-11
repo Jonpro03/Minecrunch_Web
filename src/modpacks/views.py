@@ -14,11 +14,3 @@ def modpack():
     the overall modpack
     '''
     pass
-
-
-def mod():
-    '''
-    Display a single mod, and various details like version number and
-    description
-    '''
-    pass
