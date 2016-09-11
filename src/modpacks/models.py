@@ -8,10 +8,8 @@ class Mod(models.Model):
     A mod that can be combined to make a modpack
     """
 
-    mod_name = models.CharField(
-        max_length=99,
-        verbose_name='Mod Name'
-    )
+    mod_name = models.CharField(max_length=99, verbose_name='Mod Name')
+
     desc = models.TextField(
         verbose_name='Mod Description'
     )
