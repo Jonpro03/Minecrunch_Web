@@ -1,16 +1,32 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+# from django.shortcuts import render
+from django.template import loader
+from modpacks.models import Modpack  # , mod
+from django.core.exceptions import ObjectDoesNotExist
+from django.http import HttpResponseNotFound
 
 
-def index():
+def index(request):
     '''
     Lists all available modpacks
     '''
-    pass
+
+    modpacks = Modpack.objects.all()
+    template = loader.get_template('modpacks/modpacks.html')
+
+    return HttpResponse(template.render(modpacks))
 
 
-def modpack():
+def modpack(request, slug):
     '''
     Displays a modpack's details, including available mods and description of
     the overall modpack
     '''
-    pass
+    try:
+        modpack = Modpack.objects.filter(slug=slug)
+    except ObjectDoesNotExist:
+        raise HttpResponseNotFound('No modpack matching that slug')
+
+    template = loader.get_template('home/modpack.html')
+
+    return HttpResponse(template.render(modpack))
