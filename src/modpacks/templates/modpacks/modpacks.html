@@ -22,7 +22,7 @@
         </tr>
         </thead>
         <tbody>
-        {% for mod in modpack.mods %}
+        {% for mod in modpack.mods.items %}
         <tr>
             <td>
             	{% if mod.url is not empty %}

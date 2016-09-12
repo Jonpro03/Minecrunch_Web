@@ -14,7 +14,7 @@ def index(request):
     modpacks = Modpack.objects.all()
     template = loader.get_template('modpacks/modpacks.html')
 
-    return HttpResponse(template.render(modpacks))
+    return HttpResponse(template.render({'modpacks': modpacks}))
 
 
 def modpack(request, slug):
