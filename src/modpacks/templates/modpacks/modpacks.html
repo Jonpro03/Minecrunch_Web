@@ -6,13 +6,15 @@
     <h1>Modpacks</h1>
     {% for modpack in modpacks %}
     <div class="form-label">{{ modpack.modpack_name }}</div>
-    {% if modpack.desc is not empty %}
+    {% if modpack.desc %}
     <p>
     	{{ modpack.desc }}
     </p>
     {% endif %}
     <div class="form-content">
+    	{% if modpack.image %}
         <img src="{{ modpack.image }}">
+    	{% endif %}
         <table class="table table-striped">
         <thead>
         <tr>
@@ -22,16 +24,16 @@
         </tr>
         </thead>
         <tbody>
-        {% for mod in modpack.mods.items %}
+        {% for mod in modpack.mods.all %}
         <tr>
             <td>
-            	{% if mod.url is not empty %}
+            	{% if mod.url %}
             	<a href="{{ mod.url }}">
             	{% endif %}
             	{{ mod.mod_name }}
-            	{% if mod.url is not empty %}
-            	{% endif %}
+            	{% if mod.url %}
             	</a>
+            	{% endif %}
             </td>
             <td>{{ mod.author }}</td>
             <td>{{ mod.version }}</td>
