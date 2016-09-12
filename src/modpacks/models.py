@@ -15,6 +15,9 @@ class Mod(models.Model):
     url = models.URLField(verbose_name='Link to mod website',
                           blank=True)
 
+    def __str__(self):
+        return self.mod_name
+
 
 class Modpack(models.Model):
     """
@@ -29,3 +32,6 @@ class Modpack(models.Model):
                                   verbose_name='Included mods',
                                   blank=True)
     slug = models.SlugField()
+
+    def __str__(self):
+        return self.modpack_name
