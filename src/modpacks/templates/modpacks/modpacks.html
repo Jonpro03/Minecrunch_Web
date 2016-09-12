@@ -1,0 +1,44 @@
+{% extends "home/base.html" %}
+
+{% block body-content %}
+
+<div class="row well-lg">
+    <h1>Modpacks</h1>
+    {% for modpack in modpacks %}
+    <div class="form-label">{{ modpack.modpack_name }}</div>
+    <p>
+    	{{ modpack.modpack_name }}
+    </p>
+    <div class="form-content">
+        <img src="{{ modpack.image }}">
+        <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Mod</th>
+            <th>Author</th>
+            <th>Version</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for mod in modpack.mods %}
+        <tr>
+            <td>
+            	{% if mod.url is not empty %}
+            	<a href="{{ mod.url }}">
+            	{% endif %}
+            	{{ mod.mod_name }}
+            	{% if mod.url is not empty %}
+            	{% endif %}
+            	</a>
+            </td>
+            <td>{{ mod.author }}</td>
+            <td>{{ mod.version }}</td>
+        </tr>
+	    {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
