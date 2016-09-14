@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>minecrunch.net</title>
+        <link rel="stylesheet" href="/static/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="/static/css/site.css" />
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-controller="Home" asp-action="Index"><img class="navbar-brand" src="/static/images/minecrunch.png" onmouseover="this.src='/static/images/minecrunch_highlight.png'" onmouseout="this.src='/static/images/minecrunch.png'" /></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-controller="Home" asp-action="Modpacks"><img class="menu-button" src="/static/images/modpacks.png" onmouseover="this.src='/static/images/modpacks_highlight.png'" onmouseout="this.src='/static/images/modpacks.png'" /></a></li>
+                        <li><a asp-controller="Home" asp-action="Index"><img class="menu-button" src="/static/images/servers.png" onmouseover="this.src='/static/images/servers_highlight.png'" onmouseout="this.src='/static/images/servers.png'" /></a></li>
+                        <li><a asp-controller="Home" asp-action="Contact"><img class="menu-button" src="/static/images/join.png" onmouseover="this.src='/static/images/join_highlight.png'" onmouseout="this.src='/static/images/join.png'" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            {% block body-content %}
+            {% endblock %}
+        </div>
+        <script src="/static/lib/jquery/dist/jquery.js"></script>
+        <script src="/static/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="/static/js/site.js" ></script>
+    </body>
+</html>

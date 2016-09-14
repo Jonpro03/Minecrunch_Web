@@ -1,0 +1,124 @@
+﻿body {
+    padding-bottom: 20px;
+    background-color: #2E7D32;
+    color: white;
+}
+
+footer {
+    position: static;
+}
+
+.well {
+    border: none;
+    background-color: inherit;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+/*    margin-right: 6px;
+    margin-left: 6px; */
+}
+
+body > .container {
+    background-color: #4E342E;
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.26);
+}
+
+.form-label {
+    min-height: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #3E2723;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    padding: 6px;
+}
+
+.form-content {
+    background-color: #795548;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    padding: 16px;
+}
+
+.form-content > img {
+    width: 100%;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #3E2723;
+}
+
+.menu-button {
+    max-height: 40px;
+    padding-top: 10px;
+}
+
+.navbar-fixed-top {
+    background: #1B5E20;
+    position: static;
+    
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #E8F5E9;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #FFFFFF;
+    font-size: 20px;
+    height: 80px;
+}
+
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: #795548;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #1B5E20;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #C8E6C9;
+}
+
+.navbar-fixed-top {
+    top: 0px;
+    min-height: 60px;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    border-width: 0 0 0px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #E8F5E9;
+    background-color: transparent;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Carousel */
+.carousel-caption {
+    z-index: 10 !important;
+}
+
+    .carousel-caption p {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+@media (min-width: 768px) {
+    .carousel-caption {
+        z-index: 10 !important;
+    }
+}
