@@ -29,7 +29,8 @@ class Modpack(models.Model):
                                     max_length=200)
     desc = models.TextField(verbose_name='Description of modpack',
                             blank=True)
-    # image = # TODO: Image upload stuff?
+    image = models.ImageField(verbose_name='Screenshot',
+                              blank=True)
     mods = models.ManyToManyField(Mod,
                                   verbose_name='Included mods',
                                   blank=True)
