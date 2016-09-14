@@ -9,8 +9,10 @@ class Mod(models.Model):
     mod_name = models.CharField(verbose_name='Mod name',
                                 max_length=200)
     version = models.CharField(verbose_name='Mod version',
+                               blank=True,
                                max_length=10)
     author = models.CharField(verbose_name='Mod author',
+                              blank=True,
                               max_length=200)
     url = models.URLField(verbose_name='Link to mod website',
                           blank=True)
