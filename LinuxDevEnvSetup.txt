@@ -1,0 +1,41 @@
+sudo apt-get install libunwind8 gettext libssl-dev libcurl4-openssl-dev zlib1g libicu-dev uuid-dev npm make automake libtool curl
+
+curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh
+
+curl -sSL https://github.com/libuv/libuv/archive/v1.8.0.tar.gz | sudo tar zxfv - -C /usr/local/src
+cd /usr/local/src/libuv-1.8.0
+sudo sh autogen.sh
+sudo ./configure
+sudo make
+sudo make install
+sudo rm -rf /usr/local/src/libuv-1.8.0 && cd ~/
+sudo ldconfig
+
+wget https://az764295.vo.msecnd.net/stable/c212f0908f3d29933317bbc3233568fbca7944b1/vscode-amd64.deb
+sudo dpkg -i vscode-amd64.deb
+
+sudo ln -s /usr/bin/nodejs /usr/bin/node
+
+sudo npm install -g yo grunt-cli generator-aspnet bower gulp
+
+git clone https://github.com/Jonpro03/Minecrunch_Web
+cd Minecrunch_Web
+git checkout develop
+cd src
+
+export Hosting__Environment=Development
+
+dnu restore
+
+code .
+
+Read: https://code.visualstudio.com/Docs/editor/codebasics
+
+In vscode: open the command pallet (F1)
+Type install extension, press enter
+Select C# and press enter
+Wait for the prompt to restart and restart
+
+Start the webserver by running the following from src/minecrunch.web
+
+dnx web
