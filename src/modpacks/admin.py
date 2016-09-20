@@ -1,5 +1,6 @@
 from django.contrib import admin
-from modpacks.models import Mod, Modpack
+from modpacks.models.mod import Mod
+from modpacks.models.modpack import Modpack
 
 
 class ModpackAdmin(admin.ModelAdmin):

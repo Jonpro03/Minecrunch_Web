@@ -1,8 +1,6 @@
 from django.http import HttpResponse
-# from django.shortcuts import render
 from django.template import loader
-from modpacks.models import Modpack  # , mod
-from django.core.exceptions import ObjectDoesNotExist
+from modpacks.models.modpack import Modpack
 from django.http import HttpResponseNotFound
 
 
@@ -10,7 +8,6 @@ def index(request):
     '''
     Lists all available modpacks
     '''
-
     modpacks = Modpack.objects.all()
     template = loader.get_template('modpacks/modpacks.html')
 
