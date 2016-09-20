@@ -21,10 +21,11 @@ def modpack(request, slug):
     '''
     Displays a modpack's details, including available mods and description of
     the overall modpack
+    Note: Currently unimplemented
     '''
-    try:
-        modpack = Modpack.objects.filter(slug=slug)
-    except ObjectDoesNotExist:
+    modpack = Modpack.objects.filter(slug=slug)
+
+    if not modpack.exists():
         raise HttpResponseNotFound('No modpack matching that slug')
 
     template = loader.get_template('home/modpack.html')
