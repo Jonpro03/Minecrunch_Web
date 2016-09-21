@@ -20,3 +20,6 @@ class Player(models.Model):
                               max_length=1,
                               blank=True)
     email = models.EmailField(verbose_name="Email Address")
+
+    def __str__(self):
+        return self.ign
