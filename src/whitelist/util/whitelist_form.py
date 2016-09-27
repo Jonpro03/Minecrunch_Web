@@ -1,5 +1,5 @@
 from django.forms import ModelForm, TextInput
-from whitelist.models import Player
+from whitelist.models.player import Player
 
 
 class WhitelistForm(ModelForm):
