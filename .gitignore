@@ -90,3 +90,6 @@ ENV/
 # Ignore eclipse/pydev metadata
 .metadata/
 .pydevproject
+
+# Ignore the database file
+db.sqlite3
