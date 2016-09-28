@@ -1,8 +1,10 @@
 from django.http import HttpResponse
 from django.template import loader
-from .models import Player
+from .models.player import Player
 from django.shortcuts import redirect
+from django.contrib.admin.views.decorators import staff_member_required
 from .util.whitelist_form import WhitelistForm
+# from django.contrib.sites import requests
 
 
 def index(request):
@@ -27,3 +29,27 @@ def index(request):
     template = loader.get_template('whitelist/index.html')
 
     return HttpResponse(template.render({'form': form}, request))
+
+
+@staff_member_required
+def applyWhitelist(request):
+    """Apply Whitelist to Server
+
+    Allows you to apply the latest whitelist information stored on the website
+    to the Minecraft server
+    """
+
+    players = Player.objects.filter(status=Player.APPROVED)
+    whitelist = []
+
+    for player in players:
+        playerDict = {}
+        playerDict['uuid'] = player.uuid
+        playerDict['name'] = player.ign
+
+        whitelist.append(playerDict)
+
+    # try:
+    #    pass
+    # except Exception e:
+    #    pass
