@@ -92,4 +92,4 @@ ENV/
 .pydevproject
 
 # Ignore the database file
-db.sqlite3
+**/db.sqlite3
