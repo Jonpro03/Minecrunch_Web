@@ -17,6 +17,8 @@ footer {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-bottom: 6px;
+    margin-bottom: 6px;
 /*    margin-right: 6px;
     margin-left: 6px; */
 }
@@ -108,7 +110,7 @@ textarea {
 
 /* Carousel */
 .carousel {
-	margin-top: -20px;
+	margin-top: 12px;	
 }
 
 .carousel-caption {
