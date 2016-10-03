@@ -13,8 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from .views import index, apply_whitelist, apply_whitelist_success
 from django.conf.urls import url
-from .views import index
 from django.views.generic import TemplateView
 
 urlpatterns = [
@@ -22,4 +22,8 @@ urlpatterns = [
     url(r'^submitted$',
         TemplateView.as_view(template_name='whitelist/submitted.html'),
         name='submitted'),
+    url(r'^apply-whitelist/?$', apply_whitelist),
+    url(r'^apply-whitelist-success/?$',
+        apply_whitelist_success,
+        name='apply_whitelist_success'),
 ]
