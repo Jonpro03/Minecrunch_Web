@@ -11,12 +11,9 @@ __pycache__/
 env/
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
 parts/
 sdist/
 var/
@@ -94,4 +91,4 @@ ENV/
 .pydevproject
 
 # Ignore the database file
-db.sqlite3
+**/db.sqlite3
