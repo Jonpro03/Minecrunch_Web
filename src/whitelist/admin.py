@@ -41,7 +41,8 @@ class WhitelistAdmin(AdminSite):
             players = Player.objects.filter(status=Player.APPROVED)
             whitelist = []
 
-            # Place each player in a dictionary, structured like a whitelist file
+            # Place each player in a dictionary, structured like a whitelist
+            # file
             for player in players:
                 playerDict = dict()
 
