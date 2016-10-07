@@ -1,0 +1,2 @@
+MinecrunchWeb
+django-adminplus>=0.5
