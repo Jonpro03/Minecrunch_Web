@@ -48,7 +48,7 @@ class Player(models.Model):
             pass
 
     def save(self):
-        if self.uuid.hex == self.BLANK_UUID:
+        if self.uuid.hex == Player.BLANK_UUID:
             self.fetch_account_details()
 
         super(Player, self).save()
