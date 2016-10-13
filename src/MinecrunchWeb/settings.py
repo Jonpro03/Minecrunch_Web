@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'modpacks',
+    'whitelist',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"), ]
+
+# Location of the server whitelist file
+WHITELIST_FILE = '/tmp/whitelist.json'

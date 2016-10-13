@@ -1,4 +1,4 @@
-"""MinecrunchWeb URL Configuration
+"""Whitelist URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -13,12 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
-from django.contrib import admin
+from .views import index, apply_whitelist, apply_whitelist_success
+from django.conf.urls import url
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    url(r'^home/', include('home.urls')),
-    url(r'^admin/', admin.site.urls),
-    url(r'^modpacks/', include('modpacks.urls')),
-    url(r'^whitelist/', include('whitelist.urls')),
+    url(r'^$', index),
+    url(r'^submitted$',
+        TemplateView.as_view(template_name='whitelist/submitted.html'),
+        name='submitted'),
+    url(r'^apply-whitelist/?$', apply_whitelist),
+    url(r'^apply-whitelist-success/?$',
+        apply_whitelist_success,
+        name='apply_whitelist_success'),
 ]
