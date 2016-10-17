@@ -101,6 +101,48 @@ body > .container {
     background-color: transparent;
 }
 
+/* Navbar images and effects */
+.navbar-image {
+	height: 84px;
+	text-indent: -9999em;
+}
+
+.navbar-brand {
+	background-image: url('../images/minecrunch.png');
+	width: 501px;
+}
+
+.navbar-brand:hover {
+	background-image: url('../images/minecrunch_highlight.png');
+}
+
+.navbar-modpacks {
+	background-image: url('../images/modpacks.png');
+	width: 427px;
+}
+
+.navbar-modpacks:hover {
+	background-image: url('../images/modpacks_highlight.png');
+}
+
+.navbar-server {
+	background-image: url('../images/server.png');
+	width: 363px;
+}
+
+.navbar-server:hover {
+	background-image: url('../images/server_highlight.png');
+}
+
+.navbar-whitelist {
+	background-image: url('../images/whitelist.png');
+	width: 218px;
+}
+
+.navbar-whitelist:hover {
+	background-image: url('../images/whitelist_highlight.png');
+}
+
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input,
 select,
@@ -117,10 +159,10 @@ textarea {
     z-index: 10 !important;
 }
 
-    .carousel-caption p {
-        font-size: 20px;
-        line-height: 1.4;
-    }
+.carousel-caption p {
+	font-size: 20px;
+	line-height: 1.4;
+}
 
 @media (min-width: 768px) {
     .carousel-caption {
