@@ -69,13 +69,6 @@ body > .container {
     color: #E8F5E9;
 }
 
-.navbar-inverse .navbar-brand {
-    color: #FFFFFF;
-    font-size: 20px;
-    height: 80px;
-}
-
-
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
     background-color: #795548;
 }
@@ -103,13 +96,18 @@ body > .container {
 
 /* Navbar images and effects */
 .navbar-image {
-	height: 84px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom middle;
+	display: block;
+	height: 42px;
 	text-indent: -9999em;
 }
 
 .navbar-brand {
 	background-image: url('../images/minecrunch.png');
-	width: 501px;
+	width: 250px;
+	height: 53px;
 }
 
 .navbar-brand:hover {
@@ -118,29 +116,29 @@ body > .container {
 
 .navbar-modpacks {
 	background-image: url('../images/modpacks.png');
-	width: 427px;
+	width: 213px;
 }
 
 .navbar-modpacks:hover {
 	background-image: url('../images/modpacks_highlight.png');
 }
 
-.navbar-server {
-	background-image: url('../images/server.png');
-	width: 363px;
+.navbar-servers {
+	background-image: url('../images/servers.png');
+	width: 181px;
 }
 
-.navbar-server:hover {
-	background-image: url('../images/server_highlight.png');
+.navbar-servers:hover {
+	background-image: url('../images/servers_highlight.png');
 }
 
 .navbar-whitelist {
-	background-image: url('../images/whitelist.png');
-	width: 218px;
+	background-image: url('../images/join.png');
+	width: 109px;
 }
 
 .navbar-whitelist:hover {
-	background-image: url('../images/whitelist_highlight.png');
+	background-image: url('../images/join_highlight.png');
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
