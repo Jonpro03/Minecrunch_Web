@@ -1,4 +1,4 @@
-from django.contrib.admin import AdminSite
+from django.contrib import admin
 from .util.apply_whitelist_form import ApplyWhitelistForm
 import json
 from .models.player import Player
@@ -8,70 +8,61 @@ from django.conf.urls import url
 from django.template.response import TemplateResponse
 
 
-class WhitelistAdmin(AdminSite):
-    site_header = 'Whitelist administration'
+def apply_whitelist(request):
+    """Apply Whitelist to Server
 
-    def get_urls(self):
-        """Override the get_urls method to inject our own custom, non-model views
-        """
-        urls = super(WhitelistAdmin, self).get_urls()
+    Allows you to apply the latest whitelist information stored on the
+    website to the Minecraft server
+    """
+    form = ApplyWhitelistForm(request)
+    context = {'form': form}
 
-        urls += [
-            url(r'^apply-whitelist/?$',
-                self.admin_view(self.apply_whitelist)),
-            url(r'^apply-whitelist-success/?$',
-                self.admin_view(self.apply_whitelist_success),
-                name='apply_whitelist_success'),
-        ]
+    # Handle a request to be whitelisted
+    if request.method == 'POST' and form.is_valid():
+        players = Player.objects.filter(status=Player.APPROVED)
+        whitelist = []
 
-        return urls
+        # Place each player in a dictionary, structured like a whitelist
+        # file
+        for player in players:
+            playerDict = dict()
 
-    def apply_whitelist(self, request):
-        """Apply Whitelist to Server
+            playerDict['uuid'] = player.uuid.hex
+            playerDict['name'] = player.ign
 
-        Allows you to apply the latest whitelist information stored on the
-        website to the Minecraft server
-        """
-        form = ApplyWhitelistForm(request)
-        context = dict(self.each_context(request))
-        context.update({'form': form})
+            whitelist.append(playerDict)
 
-        # Handle a request to be whitelisted
-        if request.method == 'POST' and form.is_valid():
-            players = Player.objects.filter(status=Player.APPROVED)
-            whitelist = []
+        try:
+            # Write the whitelist data to the server's whitelist file
+            whitelist_file = open(settings.WHITELIST_FILE, 'w')
+            json.dump(whitelist, whitelist_file)
 
-            # Place each player in a dictionary, structured like a whitelist
-            # file
-            for player in players:
-                playerDict = dict()
+            return redirect('admin:apply_whitelist_success')
 
-                playerDict['uuid'] = player.uuid.hex
-                playerDict['name'] = player.ign
+        except Exception as e:
+            context.update({'error': str(e)})
 
-                whitelist.append(playerDict)
+    elif request.method == 'POST':
+        context.update({'error': 'Form not valid!'})
 
-            try:
-                # Write the whitelist data to the server's whitelist file
-                whitelist_file = open(settings.WHITELIST_FILE, 'w')
-                json.dump(whitelist, whitelist_file)
+    return TemplateResponse(request,
+                            'whitelist/apply_whitelist.html',
+                            context)
 
-                return redirect('apply_whitelist_success')
+def apply_whitelist_success(request):
+    """Indicates that the whitelist was successfully written
+    """
+    return TemplateResponse(request,
+                            'whitelist/apply_whitelist_success.html',
+                            request)
 
-            except Exception as e:
-                context.update({'error': str(e)})
 
-        elif request.method == 'POST':
-            context.update({'error': 'Form not valid!'})
+admin.site.register(Player)
+admin.site.register_view('apply-whitelist',
+                         'Apply Whitelist to Server',
+                         view=apply_whitelist)
+admin.site.register_view('apply-whitelist-success',
+                         visible=False,
+                         urlname='apply_whitelist_success',
+                         view=apply_whitelist_success)
 
-        return TemplateResponse(request,
-                                'whitelist/apply_whitelist.html',
-                                context)
-
-    def apply_whitelist_success(self, request):
-        """Indicates that the whitelist was successfully written
-        """
-        context = dict(self.admin_site.each_context(request))
-        return TemplateResponse(request,
-                                'apply_whitelist_success.html',
-                                context)
