@@ -1,7 +1,12 @@
 from django.contrib import admin
 from .util.apply_whitelist_form import ApplyWhitelistForm
 import json
-from .models.player import Player
+from .util.approved_admin import ApprovedAdmin
+from .util.denied_admin import DeniedAdmin
+from .util.pending_admin import PendingAdmin
+from .models.approved_player import ApprovedPlayer
+from .models.denied_player import DeniedPlayer
+from .models.pending_player import PendingPlayer
 from django.shortcuts import redirect
 from django.conf import settings
 from django.conf.urls import url
@@ -57,7 +62,9 @@ def apply_whitelist_success(request):
                             request)
 
 
-admin.site.register(Player)
+admin.site.register(ApprovedPlayer, ApprovedAdmin)
+admin.site.register(DeniedPlayer, DeniedAdmin)
+admin.site.register(PendingPlayer, PendingAdmin)
 admin.site.register_view('apply-whitelist',
                          'Apply Whitelist to Server',
                          view=apply_whitelist)
