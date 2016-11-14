@@ -8,6 +8,8 @@ class Server(models.Model):
 
     name = models.CharField(verbose_name='Server Name',
             max_length=200)
+    desc = models.TextField(verbose_name='Server Description',
+            blank=True)
     modpack = models.ForeignKey(Modpack, verbose_name='Server Modpack')
     address = models.CharField(verbose_name='Server Address',
             max_length=200,
