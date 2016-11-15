@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^home/', include('home.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^modpacks/', include('modpacks.urls')),
+    url(r'^servers/', include('servers.urls')),
     url(r'^whitelist/', include('whitelist.urls')),
 ]
