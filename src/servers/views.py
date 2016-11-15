@@ -9,7 +9,7 @@ def index(request):
 
     servers = Server.objects.all()
 
-    return render(request, 'servers/servers.html', {'servers': servers}))
+    return render(request, 'servers/servers.html', {'servers': servers})
 
 
 def server(request, slug):
@@ -19,5 +19,5 @@ def server(request, slug):
 
     server = get_object_or_404(Server, slug=slug)
 
-    return render(request, 'servers/server.html', {'server': server}))
+    return render(request, 'servers/server.html', {'server': server})
 

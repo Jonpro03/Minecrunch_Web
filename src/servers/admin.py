@@ -3,7 +3,7 @@ from .models import Server
 
 
 class ServerAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ('title', )}
+    prepopulated_fields = {'slug': ('name', )}
 
 
 admin.site.register(Server, ServerAdmin)
