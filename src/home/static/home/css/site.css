@@ -1,5 +1,61 @@
+@font-face
+{
+font-family: minecraft;
+src: url('/static/home/fonts/ProFontWindows.ttf');
+}
+
+.arrow {
+  position: fixed;
+  bottom: -5em;
+  left: 50%;
+  margin-left:-20px;
+  width: 40px;
+  height: 40px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyICBsMTg5Ljk5OS0xOTBjMjAuMTc4LTIwLjE3OCw1My4xNjQtMTkuOTEzLDczLjY3MiwwLjU5NWwwLDBjMjAuNTA4LDIwLjUwOSwyMC43NzIsNTMuNDkyLDAuNTk1LDczLjY3MUwyOTMuNzUxLDQ1NS44Njh6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjIwLjI0OSw0NTUuODY4YzIwLjE4LDIwLjE3OSw1My4xNjQsMTkuOTEzLDczLjY3Mi0wLjU5NWwwLDBjMjAuNTA5LTIwLjUwOCwyMC43NzQtNTMuNDkzLDAuNTk2LTczLjY3MiAgbC0xOTAtMTkwYy0yMC4xNzgtMjAuMTc4LTUzLjE2NC0xOS45MTMtNzMuNjcxLDAuNTk1bDAsMGMtMjAuNTA4LDIwLjUwOS0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=);
+  background-size: contain;  
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-timing-function: initial;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: initial;
+    animation-fill-mode: initial;
+    animation-play-state: initial;
+}
+}
+
+.scroll-btn {
+	position: relative;
+	margin-top: 95%;
+	font-size: 5em;
+}
+
+.parallax {
+	/* image dimming */
+    -webkit-filter:brightness(50%);
+    -moz-filter:brightness(50%);
+    filter: url(#brightness); /* required for FF */
+    filter:brightness(50%);
+
+    /* parallax effect */
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#youtube-content {
+	background-image: url('/static/home/images/youtube.jpg');
+}
+
 html, body, .view {
 	height: 100%;
+	font-family: 'minecraft';
 }
 /* Navigation*/
 .navbar {
@@ -18,19 +74,21 @@ html, body, .view {
 }
 
 footer.page-footer {
-	background-color: #37474F
-;
+	background-color: #37474F;
 	margin-top: -1px;
 }
 
 @media only screen and (max-width: 768px) {
 	.navbar {
-		background-color: #37474F
-;
+		background-color: #37474F;
 	}
 }
-/*Call to action*/
+
 .flex-center {
+	color: #fff;
+}
+
+.container {
 	color: #fff;
 }
 
@@ -104,8 +162,9 @@ footer.page-footer {
     float: left;
     text-decoration: none;
     width: 16rem;
-    background: #37474F
-;
+    background: #37474F;
+    opacity: 0.7;
+    
     border-top: 1px solid rgba(21, 27, 37, 0.8);
     border-bottom: 1px solid rgba(21, 27, 37, 0.8);
     -webkit-transition: background .5s;
@@ -185,11 +244,11 @@ footer.page-footer {
 
 @media (max-width:767px) {
     #wrapper {
-    padding-left: 70px;
+    padding-left: 1.4rem;
     transition: all .4s ease 0s;
 }
 #sidebar-wrapper {
-    left: 70px;
+    left: 1.4rem;
 }
 #wrapper.active {
     padding-left: 150px;

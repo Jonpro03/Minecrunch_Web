@@ -1,8 +1,91 @@
 {% extends "home/base.html" %}
 {% block body-content %}
-<div class="body-content">
-
-	<div class="form-label">Some Other Important Information</div>
-	<div class="form-content">Some really important content!</div>
+<div class="wrapper view hm-black-strong">
+	<div class="full-bg-img flex-center page-content inset">
+		<div class="animated fadeInUp">
+			<div class="body-content">
+				<h1>MINECRUNCH.NET</h1>
+				<div class="form-label">
+					<p>Some Other Important Information</p>
+					<p>Some Other Important Information</p>
+					<p>Some Other Important Information</p>
+					<p>Some Other Important Information</p>
+					<p>Some Other Important Information</p>
+					<p>Some Other Important Information</p>
+					<p>Some Other Important Information</p>
+					<p>Some Other Important Information</p>
+				</div>
+				<div class="container-fluid">
+					<div class="form-content">
+						<p>Some really important content!</p>
+						<p>Some really important content!</p>
+						<p>Some really important content!</p>
+						<p>Some really important content!</p>
+					</div>
+				</div>
+			</div>
+			<a href="#youtube-content" class="arrow bounce"></a>
+		</div>
+		
+	</div>
 </div>
+{% endblock %}
+
+{% block youtube-content %}
+<div id="youtube-content" class="parallax">
+	<div class="flex-center">
+		<div class="row">
+			<h1 class="text-center">YOUTUBE SERIES</h1>
+		</div>
+		<div class="row">
+		<div class="card col-sm-6">
+			<div class="card-block">
+				<h4 class="card-title">Skybock Redux</h4>
+			    <h6 class="card-subtitle text-muted">Will they survive?</h6>
+			 </div>
+			  <img src="https://i.ytimg.com/vi/5qkvyrFdRWk/hqdefault.jpg?custom=true&w=320&h=180&stc=true&jpg444=true&jpgq=90&sp=68&sigh=8LleLy0Q_9uG16rdOhmY3Imu964" alt="Card image">
+			  <div class="card-block">
+			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			</div>
+		</div>
+		<div class="card col-sm-6">
+			<div class="card-block">
+				<h4 class="card-title">Skybock Redux</h4>
+			    <h6 class="card-subtitle text-muted">Will they survive?</h6>
+			 </div>
+			  <img src="https://i.ytimg.com/vi/5qkvyrFdRWk/hqdefault.jpg?custom=true&w=320&h=180&stc=true&jpg444=true&jpgq=90&sp=68&sigh=8LleLy0Q_9uG16rdOhmY3Imu964" alt="Card image">
+			  <div class="card-block">
+			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			</div>
+		</div>
+	</div>
+	
+</div>
+{% endblock %}
+
+{% block footer-content %}
+<footer class="page-footer center-on-small-only">
+	<div class="container-fluid">
+		<div class="col-xs-8 offset-xs-2">
+			<h3> Who is MINECRUNCH?</h3>
+			<p>MINECRUNCH started out as a couple of friends playing a little bit of Minecraft. It has since morphed into so much more, from our early beginnings of running a Tekkit server, to a FTB server, to doing a SkyBlocks and Galacticraft videos.</p>
+			<p>We know Minecraft, and now we are pleased to start doing Modpacks. We currently have a Medieval Minecrunch Modpack. Go to our download section and get it, it is easy to install, just a click of a button.</p>
+			<span>
+				<img src="https://minotar.net/cube/tstreit1/150.png">
+				<img src="https://minotar.net/cube/jonpro03/150.png">
+				<img src="https://minotar.net/cube/lo_windigo/150.png">
+				<img src="https://minotar.net/cube/linuxchiq/150.png">
+				<img src="https://minotar.net/cube/vk7hse/150.png">
+				<img src="https://minotar.net/cube/saliktor/150.png">
+				<img src="https://minotar.net/cube/21kai21/150.png">
+			</span>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container-fluid">
+			© 2016 Copyright: <a href="http://minecrunch.net">
+				MINECRUNCH </a>
+		</div>
+	</div>
+</footer>
 {% endblock %}

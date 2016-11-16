@@ -1,48 +1,55 @@
 {% extends "home/base.html" %}
 
 {% block body-content %}
-
-<div class="row well-lg">
-    <h1>Modpacks</h1>
-    {% for modpack in modpacks %}
-    <div class="form-label">{{ modpack.modpack_name }}</div>
-    {% if modpack.desc %}
-    <p>
-    	{{ modpack.desc }}
-    </p>
-    {% endif %}
-    <div class="form-content">
-    	{% if modpack.image %}
-        <img src="{{ modpack.image }}">
-    	{% endif %}
-        <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>Mod</th>
-            <th>Author</th>
-            <th>Version</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for mod in modpack.mods.all %}
-        <tr>
-            <td>
-            	{% if mod.url %}
-            	<a href="{{ mod.url }}">
-            	{% endif %}
-            	{{ mod.mod_name }}
-            	{% if mod.url %}
-            	</a>
-            	{% endif %}
-            </td>
-            <td>{{ mod.author }}</td>
-            <td>{{ mod.version }}</td>
-        </tr>
-	    {% endfor %}
-        </tbody>
-    </table>
-    </div>
-    {% endfor %}
+<div class="wrapper view hm-black-strong">
+	<div class="full-bg-img flex-center page-content inset">
+		<div class="animated fadeInUp">
+			<div class="body-content">
+				<div class="row well-lg">
+				    <h1>Modpacks</h1>
+				    {% for modpack in modpacks %}
+				    <div class="form-label">{{ modpack.modpack_name }}</div>
+				    {% if modpack.desc %}
+				    <p>
+				    	{{ modpack.desc }}
+				    </p>
+				    {% endif %}
+				    <div class="form-content">
+				    	{% if modpack.image %}
+				        <img src="{{ modpack.image }}">
+				    	{% endif %}
+				        <table class="table table-striped">
+				        <thead>
+				        <tr>
+				            <th>Mod</th>
+				            <th>Author</th>
+				            <th>Version</th>
+				        </tr>
+				        </thead>
+				        <tbody>
+				        {% for mod in modpack.mods.all %}
+				        <tr>
+				            <td>
+				            	{% if mod.url %}
+				            	<a href="{{ mod.url }}">
+				            	{% endif %}
+				            	{{ mod.mod_name }}
+				            	{% if mod.url %}
+				            	</a>
+				            	{% endif %}
+				            </td>
+				            <td>{{ mod.author }}</td>
+				            <td>{{ mod.version }}</td>
+				        </tr>
+					    {% endfor %}
+				        </tbody>
+				    </table>
+				    </div>
+				    {% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 {% endblock %}

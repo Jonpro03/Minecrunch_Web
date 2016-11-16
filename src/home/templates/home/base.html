@@ -23,10 +23,9 @@
 
 <body>
 	<div id="wrapper" class="">
-
 		<div id="sidebar-wrapper">
 			<ul id="sidebar_menu" class="sidebar-nav">
-				<li class="sidebar-brand"><a id="menu-toggle" href="{% url "home:index" %}">
+				<li class="sidebar-brand"><a id="menu-toggle">
 						<img src="{% static "/home/images/minecrunch.png" %}" style="width: 10rem;" /> <span
 						id="main_icon" class="fa fa-bars"></span>
 				</a></li>
@@ -48,75 +47,13 @@
 		</div>
 
 	</div>
-	<!-- 
-	<nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
-		<button class="navbar-toggler hidden-sm-up" type="button"
-			data-toggle="collapse" data-target="#collapseEx">
-			<i class="fa fa-bars"></i>
-		</button>
-
-		<div class="container">
-			<div class="collapse navbar-toggleable-xs" id="collapseEx">
-				<a class="navbar-brand navbar-image" href="{% url "home:index" %}">Minecrunch</a>
-				<ul class="nav navbar-nav">
-					<li class="nav-item"><a class="nav-link" href="{% url "modpacks:index" %}">Modpacks</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="{% url "home:index" %}">Servers</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="{% url "whitelist:index" %}">Join</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
- -->
-	<!--Mask-->
-	<div class="wrapper view hm-black-strong">
-		<div class="full-bg-img flex-center page-content inset">
-			<div class="animated fadeInUp">{% block body-content %} 
-			{% endblock %}</div>
-		</div>
-	</div>
-	<!--/.Mask-->
-
-	<!--Footer-->
-	<footer class="page-footer center-on-small-only">
-
-		<!--Footer Links-->
-		<div class="container-fluid"></div>
-		<!--/.Footer Links-->
-
-		<hr>
-
-		<!--Call to action-->
-		<div class="call-to-action">
-			<h4>Material Design for Bootstrap</h4>
-			<ul>
-				<li>
-					<h5>Get our UI KIT for free</h5>
-				</li>
-				<li><a target="_blank"
-					href="http://mdbootstrap.com/getting-started/"
-					class="btn btn-danger">Sign up!</a></li>
-				<li><a target="_blank"
-					href="http://mdbootstrap.com/material-design-for-bootstrap/"
-					class="btn btn-default">Learn more</a></li>
-			</ul>
-		</div>
-		<!--/.Call to action-->
-
-		<!--Copyright-->
-		<div class="footer-copyright">
-			<div class="container-fluid">
-				© 2015 Copyright: <a href="http://www.MDBootstrap.com">
-					MDBootstrap.com </a>
-
-			</div>
-		</div>
-		<!--/.Copyright-->
-
-	</footer>
-
+	{% block body-content %} 
+	{% endblock %}
+	{% block youtube-content %}
+	{% endblock %}
+	{% block footer-content %}
+	{% endblock %}
+	
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
 		integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7"
