@@ -1,40 +1,136 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
-    <head>
-    {% load static %}
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>minecrunch.net</title>
-        <link rel="stylesheet" href="/static/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="/static/css/site.css" />
-    </head>
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a asp-controller="Home" asp-action="Index"><img class="navbar-brand" src="/static/images/minecrunch.png" onmouseover="this.src='/static/images/minecrunch_highlight.png'" onmouseout="this.src='/static/images/minecrunch.png'" /></a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a asp-controller="Home" asp-action="Modpacks"><img class="menu-button" src="/static/images/modpacks.png" onmouseover="this.src='/static/images/modpacks_highlight.png'" onmouseout="this.src='/static/images/modpacks.png'" /></a></li>
-                        <li><a asp-controller="Home" asp-action="Index"><img class="menu-button" src="/static/images/servers.png" onmouseover="this.src='/static/images/servers_highlight.png'" onmouseout="this.src='/static/images/servers.png'" /></a></li>
-                        <li><a asp-controller="Home" asp-action="Contact"><img class="menu-button" src="/static/images/join.png" onmouseover="this.src='/static/images/join_highlight.png'" onmouseout="this.src='/static/images/join.png'" /></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container body-content">
-            {% block body-content %}
-            {% endblock %}
-        </div>
-        <script src="/static/lib/jquery/dist/jquery.js"></script>
-        <script src="/static/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="/static/js/site.js" ></script>
-    </body>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<title>{% block title %}Minecrunch Network{% endblock %}</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+	integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.min.css">
+<link rel="stylesheet" href="{% static "/home/css/site.css" %}">
+</head>
+
+<body>
+	<div id="wrapper" class="">
+
+		<div id="sidebar-wrapper">
+			<ul id="sidebar_menu" class="sidebar-nav">
+				<li class="sidebar-brand"><a id="menu-toggle" href="{% url "home:index" %}">
+						<img src="{% static "/home/images/minecrunch.png" %}" style="width: 10rem;" /> <span
+						id="main_icon" class="fa fa-bars"></span>
+				</a></li>
+			</ul>
+			<ul class="sidebar-nav" id="sidebar">
+				<li><a class="nav-link" href="{% url "home:index" %}">Home
+						<span class="sub_icon fa fa-home"></span>
+				</a></li>
+				<li><a class="nav-link" href="{% url "modpacks:index" %}">Modpacks
+						<span class="sub_icon fa fa-folder-open"></span>
+				</a></li>
+				<li><a class="nav-link" href="{% url "home:index" %}">Servers
+						<span class="sub_icon fa fa-play"></span>
+				</a></li>
+				<li><a class="nav-link" href="{% url "whitelist:index" %}">Join
+						<span class="sub_icon fa fa-unlock"></span>
+				</a></li>
+			</ul>
+		</div>
+
+	</div>
+	<!-- 
+	<nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
+		<button class="navbar-toggler hidden-sm-up" type="button"
+			data-toggle="collapse" data-target="#collapseEx">
+			<i class="fa fa-bars"></i>
+		</button>
+
+		<div class="container">
+			<div class="collapse navbar-toggleable-xs" id="collapseEx">
+				<a class="navbar-brand navbar-image" href="{% url "home:index" %}">Minecrunch</a>
+				<ul class="nav navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="{% url "modpacks:index" %}">Modpacks</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="{% url "home:index" %}">Servers</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="{% url "whitelist:index" %}">Join</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+ -->
+	<!--Mask-->
+	<div class="wrapper view hm-black-strong">
+		<div class="full-bg-img flex-center page-content inset">
+			<div class="animated fadeInUp">{% block body-content %} 
+			{% endblock %}</div>
+		</div>
+	</div>
+	<!--/.Mask-->
+
+	<!--Footer-->
+	<footer class="page-footer center-on-small-only">
+
+		<!--Footer Links-->
+		<div class="container-fluid"></div>
+		<!--/.Footer Links-->
+
+		<hr>
+
+		<!--Call to action-->
+		<div class="call-to-action">
+			<h4>Material Design for Bootstrap</h4>
+			<ul>
+				<li>
+					<h5>Get our UI KIT for free</h5>
+				</li>
+				<li><a target="_blank"
+					href="http://mdbootstrap.com/getting-started/"
+					class="btn btn-danger">Sign up!</a></li>
+				<li><a target="_blank"
+					href="http://mdbootstrap.com/material-design-for-bootstrap/"
+					class="btn btn-default">Learn more</a></li>
+			</ul>
+		</div>
+		<!--/.Call to action-->
+
+		<!--Copyright-->
+		<div class="footer-copyright">
+			<div class="container-fluid">
+				© 2015 Copyright: <a href="http://www.MDBootstrap.com">
+					MDBootstrap.com </a>
+
+			</div>
+		</div>
+		<!--/.Copyright-->
+
+	</footer>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+		integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js"
+		integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
+		integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/js/mdb.min.js"></script>
+	<script src="{% static "/home/js/site.js" %} "></script>
+</body>
 </html>

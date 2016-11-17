@@ -15,15 +15,23 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from adminplus.sites import AdminSitePlus
 
 admin.site = AdminSitePlus()
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^home/', include('home.urls')),
+    url(r'^', include('home.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^modpacks/', include('modpacks.urls')),
     url(r'^servers/', include('servers.urls')),
     url(r'^whitelist/', include('whitelist.urls')),
 ]
+
+# Set up some custom url patterns for debugging
+if settings.DEBUG:
+    # Append static files
+    urlpatterns += staticfiles_urlpatterns()
+

@@ -69,13 +69,6 @@ body > .container {
     color: #E8F5E9;
 }
 
-.navbar-inverse .navbar-brand {
-    color: #FFFFFF;
-    font-size: 20px;
-    height: 80px;
-}
-
-
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
     background-color: #795548;
 }
@@ -101,6 +94,53 @@ body > .container {
     background-color: transparent;
 }
 
+/* Navbar images and effects */
+.navbar-image {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom middle;
+	display: block;
+	height: 42px;
+	text-indent: -9999em;
+}
+
+.navbar-brand {
+	background-image: url('../images/minecrunch.png');
+	width: 250px;
+	height: 53px;
+}
+
+.navbar-brand:hover {
+	background-image: url('../images/minecrunch_highlight.png');
+}
+
+.navbar-modpacks {
+	background-image: url('../images/modpacks.png');
+	width: 213px;
+}
+
+.navbar-modpacks:hover {
+	background-image: url('../images/modpacks_highlight.png');
+}
+
+.navbar-servers {
+	background-image: url('../images/servers.png');
+	width: 181px;
+}
+
+.navbar-servers:hover {
+	background-image: url('../images/servers_highlight.png');
+}
+
+.navbar-whitelist {
+	background-image: url('../images/join.png');
+	width: 109px;
+}
+
+.navbar-whitelist:hover {
+	background-image: url('../images/join_highlight.png');
+}
+
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input,
 select,
@@ -117,10 +157,10 @@ textarea {
     z-index: 10 !important;
 }
 
-    .carousel-caption p {
-        font-size: 20px;
-        line-height: 1.4;
-    }
+.carousel-caption p {
+	font-size: 20px;
+	line-height: 1.4;
+}
 
 @media (min-width: 768px) {
     .carousel-caption {
