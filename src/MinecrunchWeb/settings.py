@@ -130,5 +130,9 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 # Location of the server whitelist file
 WHITELIST_FILE = '/tmp/whitelist.json'
