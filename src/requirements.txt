@@ -1,3 +1,4 @@
 MinecrunchWeb
+Pillow
 Django
 django-adminplus>=0.5
