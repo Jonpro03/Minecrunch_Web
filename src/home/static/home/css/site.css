@@ -6,7 +6,7 @@ src: url('/static/home/fonts/ProFontWindows.ttf');
 
 .arrow {
   position: fixed;
-  bottom: -5em;
+  bottom: -3rem;
   left: 50%;
   margin-left:-20px;
   width: 40px;
@@ -35,12 +35,6 @@ src: url('/static/home/fonts/ProFontWindows.ttf');
 }
 
 .parallax {
-	/* image dimming */
-    -webkit-filter:brightness(50%);
-    -moz-filter:brightness(50%);
-    filter: url(#brightness); /* required for FF */
-    filter:brightness(50%);
-
     /* parallax effect */
     height: 100%;
     background-attachment: fixed;
@@ -51,6 +45,14 @@ src: url('/static/home/fonts/ProFontWindows.ttf');
 
 #youtube-content {
 	background-image: url('/static/home/images/youtube.jpg');
+}
+
+#youtube-content:after {
+	/* image dimming */
+    -webkit-filter:brightness(50%);
+    -moz-filter:brightness(50%);
+    filter: url(#brightness); /* required for FF */
+    filter:brightness(50%);
 }
 
 html, body, .view {
