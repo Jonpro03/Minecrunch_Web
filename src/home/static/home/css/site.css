@@ -47,12 +47,12 @@ src: url('/static/home/fonts/ProFontWindows.ttf');
 	background-image: url('/static/home/images/youtube.jpg');
 }
 
-#youtube-content:after {
-	/* image dimming */
-    -webkit-filter:brightness(50%);
-    -moz-filter:brightness(50%);
-    filter: url(#brightness); /* required for FF */
-    filter:brightness(50%);
+#server-content {
+	background-image: url('/static/home/images/2016-10-16.png');
+}
+
+.full-bg-img {
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 html, body, .view {
@@ -100,7 +100,7 @@ footer.page-footer {
 }
 
 .card {
-	background-color:rgba(0, 0, 0, 0.4);
+	background-color:rgba(0, 0, 0, 0.6);
 	margin: 1em;
 }
 
@@ -128,6 +128,7 @@ footer.page-footer {
     transition: all .4s ease 0s;
 }
 
+
 #sidebar-wrapper {
     margin-left: -20rem;
     left: 8rem;
@@ -138,7 +139,6 @@ footer.page-footer {
     z-index: 10000;
     transition: all .4s ease 0s;
 }
-
 .sidebar-nav {
     display: block;
     float: left;
@@ -147,6 +147,7 @@ footer.page-footer {
     margin: 0;
     padding: 0;
 }
+
 #page-content-wrapper {
     padding-left: 0;
     margin-left: 0;
@@ -222,7 +223,7 @@ footer.page-footer {
 .sidebar-nav > .sidebar-brand a:hover {
   color: #fff;
   background: none;
-}
+}*/
 
 #main_icon
 {

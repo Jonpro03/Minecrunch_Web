@@ -25,7 +25,8 @@
 	<div id="wrapper" class="">
 		<div id="sidebar-wrapper">
 			<ul id="sidebar_menu" class="sidebar-nav">
-				<li class="sidebar-brand"><a id="menu-toggle">
+				<li class="sidebar-brand">
+				<a id="menu-toggle">
 						<img src="{% static "/home/images/minecrunch.png" %}" style="width: 10rem;" /> <span
 						id="main_icon" class="fa fa-bars"></span>
 				</a></li>
@@ -43,6 +44,9 @@
 				<li><a class="nav-link" href="{% url "whitelist:index" %}">Join
 						<span class="sub_icon fa fa-unlock"></span>
 				</a></li>
+				<li><a class="nav-link" href="{% url "admin:index" %}">Log In
+						<span class="sub_icon fa fa-user"></span>
+				</a></li>
 			</ul>
 		</div>
 
@@ -51,6 +55,8 @@
 	{% endblock %}
 	{% block youtube-content %}
 	{% endblock %}
+	{% block server-content %}
+	{% endblock %}	
 	{% block footer-content %}
 	{% endblock %}
 	

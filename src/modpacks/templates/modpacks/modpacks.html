@@ -4,13 +4,13 @@
 <div class="wrapper view hm-black-strong">
 	<div class="full-bg-img flex-center page-content inset">
 		<div class="animated fadeInUp">
-			<div class="body-content">
+			<div class="body-content col-xs-8 offset-xs-2">
 				<div class="row">
-				    <h1>Modpacks</h1>
+				    <h1 class="text-xs-center">Modpacks</h1>
 				    {% for modpack in modpacks %}
 				    <div class="card">
 				    	<div class="card-block">
-						    <div class="form-label">{{ modpack.modpack_name }}</div>
+						    <h3 class="form-label">{{ modpack.modpack_name }}</h3>
 						    {% if modpack.desc %}
 						    <h6 class="card-subtitle text-muted">
 						    	{{ modpack.desc }}
