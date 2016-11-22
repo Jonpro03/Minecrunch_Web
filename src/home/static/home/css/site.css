@@ -200,3 +200,7 @@ footer.page-footer {
     transition: all .4s ease 0s;
 }
 }
+
+.body-content {
+	padding: 5em;
+}
