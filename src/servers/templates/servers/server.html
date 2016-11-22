@@ -1,0 +1,35 @@
+{% extends "home/base.html" %}
+
+{% block body-content %}
+
+<div class="body-content">
+    <h1>{{ server.name }}</h1>
+	<ul class="list-group">
+		<li>
+			<strong>Modpack:</strong> <a href="{% url "modpacks:modpack"
+			server.modpack.slug %}">{{ server.modpack }}</a>
+		</li>
+		{% if server.address %}
+		<li><strong>Address:</strong> {{ server.address }}</li>
+		{% endif %}
+	</ul>
+	{% if server.screenshot %}
+	<p>
+		<img src="{{ server.screenshot.url }}" alt=
+		"A screenshot of the {{ server.name }} server">
+	</p>
+	{% endif %}
+	<p class="well">
+		{{ server.desc }}
+	</p>
+	{% if server.dynmap %}
+	<h2>Dynmap</h2>
+	<p>
+		You can also <a href="{{ server.dynmap }}">view the server's dynmap</a>
+		directly.
+	</p>
+	<iframe src="{{ server.dynmap }}" width="100%" height="100vh"></iframe>
+	{% endif %}
+</div>
+
+{% endblock %}
