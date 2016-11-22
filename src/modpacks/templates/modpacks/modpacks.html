@@ -1,59 +1,52 @@
 {% extends "home/base.html" %}
 
 {% block body-content %}
-<div class="wrapper view hm-black-strong">
-	<div class="full-bg-img flex-center page-content inset">
-		<div class="animated fadeInUp">
-			<div class="body-content col-xs-8 offset-xs-2">
-				<div class="row">
-				    <h1 class="text-xs-center">Modpacks</h1>
-				    {% for modpack in modpacks %}
-				    <div class="card">
-				    	<div class="card-block">
-						    <h3 class="form-label">{{ modpack.modpack_name }}</h3>
-						    {% if modpack.desc %}
-						    <h6 class="card-subtitle text-muted">
-						    	{{ modpack.desc }}
-						    </h6>
-						    {% endif %}
-					    </div>
-					    	{% if modpack.image %}
-					        <img class="img-fluid" src="{{ modpack.image.url }}">
-					    	{% endif %}
-					    	<div class="card-block">
-						        <table class="table table-striped">
-						        <thead>
-						        <tr>
-						            <th>Mod</th>
-						            <th>Author</th>
-						            <th>Version</th>
-						        </tr>
-						        </thead>
-						        <tbody>
-						        {% for mod in modpack.mods.all %}
-						        <tr>
-						            <td>
-						            	{% if mod.url %}
-						            	<a href="{{ mod.url }}">
-						            	{% endif %}
-						            	{{ mod.mod_name }}
-						            	{% if mod.url %}
-						            	</a>
-						            	{% endif %}
-						            </td>
-						            <td>{{ mod.author }}</td>
-						            <td>{{ mod.version }}</td>
-						        </tr>
-							    {% endfor %}
-						        </tbody>
-						    </table>
-					    </div>
-				    </div>
+<div class="static-page" id="home-content">
+	<h1 class="container text-xs-center">Modpacks</h1>
+	<div class="container-fluid animated fadeInUp">
+	    {% for modpack in modpacks %}
+	    <div class="card">
+	    	<div class="card-block">
+			    <h3 class="form-label">{{ modpack.modpack_name }}</h3>
+			    {% if modpack.desc %}
+			    <h6 class="card-subtitle text-muted">
+			    	{{ modpack.desc }}
+			    </h6>
+			    {% endif %}
+		    </div>
+		    	{% if modpack.image %}
+		        <img class="img-fluid" src="{{ modpack.image.url }}">
+		    	{% endif %}
+		    	<div class="card-block">
+			        <table class="table table-striped">
+			        <thead>
+			        <tr>
+			            <th>Mod</th>
+			            <th>Author</th>
+			            <th>Version</th>
+			        </tr>
+			        </thead>
+			        <tbody>
+			        {% for mod in modpack.mods.all %}
+			        <tr>
+			            <td>
+			            	{% if mod.url %}
+			            	<a href="{{ mod.url }}">
+			            	{% endif %}
+			            	{{ mod.mod_name }}
+			            	{% if mod.url %}
+			            	</a>
+			            	{% endif %}
+			            </td>
+			            <td>{{ mod.author }}</td>
+			            <td>{{ mod.version }}</td>
+			        </tr>
 				    {% endfor %}
-				</div>
-			</div>
-		</div>
-	</div>
+			        </tbody>
+			    </table>
+		    </div>
+	    </div>
+	    {% endfor %}
 </div>
 
 {% endblock %}

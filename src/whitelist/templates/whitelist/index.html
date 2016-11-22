@@ -1,32 +1,30 @@
 {% extends "home/base.html" %}
 
 {% block body-content %}
-<div class="wrapper view hm-black-strong">
-	<div class="full-bg-img flex-center page-content inset">
-		<div class="animated fadeInUp">
-			<div class="body-content">
-				<form method="post">
-					<div class="card card-dark">
-						<h1 class="card-title">Whitelist Request</h1>
-					{% csrf_token %}
-					{{ form.non_field_errors }}
-					<div class="md-form">
-						<label for="id_ign">{{ form.ign.label }}</label>
-						{{ form.ign.errors }}
-						{{ form.ign }}
-					</div>
-					<div class="md-form">
-						<label for="id_email">{{ form.email.label }}</label>
-						{{ form.email.errors }}
-						{{ form.email }}
-					</div>
-					<div class="form-group">
-						<a class="btn btn-info" type="submit">Submit Request</a>
-					</div>
-					</div>
-				</form>
+<div class="static-page" id="home-content">
+	<h1 class="container text-xs-center">Whitelist Request</h1>
+	<div class="container-fluid animated fadeInUp">
+		<form method="post">
+			<div class="card card-dark">
+				<h3 class="card-title hidden-sm-down">Provide your details</h3>
+				{% csrf_token %}
+				{{ form.non_field_errors }}
+				<div class="md-form">
+					<label for="id_ign">{{ form.ign.label }}</label>
+					{{ form.ign }}
+					{{ form.ign.errors }}
+				</div>
+				&nbsp;
+				<div class="md-form">
+					<label for="id_email">{{ form.email.label }}</label>
+					{{ form.email }}
+					{{ form.email.errors }}
+				</div>
+				<div class="form-group">
+					<button class="btn btn-info" type="submit">Submit</button>
+				</div>
 			</div>
-		</div>
+		</form>
 	</div>
 </div>				
 

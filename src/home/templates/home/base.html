@@ -1,4 +1,5 @@
 {% load static %}
+{% load menu_options %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,35 +23,36 @@
 </head>
 
 <body>
-	<div id="wrapper" class="">
+	<div id="wrapper" class="hidden-xs-down">
 		<div id="sidebar-wrapper">
-			<ul id="sidebar_menu" class="sidebar-nav">
-				<li class="sidebar-brand">
-				<a id="menu-toggle">
-						<img src="{% static "/home/images/minecrunch.png" %}" style="width: 10rem;" /> <span
-						id="main_icon" class="fa fa-bars"></span>
-				</a></li>
-			</ul>
 			<ul class="sidebar-nav" id="sidebar">
-				<li><a class="nav-link" href="{% url "home:index" %}">Home
-						<span class="sub_icon fa fa-home"></span>
+				<li class="nav-link"><a id="menu-toggle">
+					<img src="{% static "/home/images/minecrunch.png" %}" style="width: 10rem;" />
+					<span id="main_icon" class="sub_icon fa fa-bars"></span>
 				</a></li>
-				<li><a class="nav-link" href="{% url "modpacks:index" %}">Modpacks
-						<span class="sub_icon fa fa-folder-open"></span>
-				</a></li>
-				<li><a class="nav-link" href="{% url "home:index" %}">Servers
-						<span class="sub_icon fa fa-play"></span>
-				</a></li>
-				<li><a class="nav-link" href="{% url "whitelist:index" %}">Join
-						<span class="sub_icon fa fa-unlock"></span>
-				</a></li>
-				<li><a class="nav-link" href="{% url "admin:index" %}">Log In
-						<span class="sub_icon fa fa-user"></span>
-				</a></li>
+				{% menu_link "/" "Home" "fa-home" %}
+				{% menu_link "/modpacks" "Modpacks" "fa-folder-open" %}
+				{% menu_link "/servers" "Servers" "fa-play" %}
+				{% menu_link "/whitelist" "Join" "fa-unlock" %}
+				{% menu_link "/admin" "Log In" "fa-user" %}
 			</ul>
 		</div>
-
 	</div>
+	<nav class="navbar navbar-full navbar-dark bg-faded hidden-sm-up">
+		<button class="navbar-toggler fa fa-bars" type="button" data-toggle="collapse"
+			data-target="#navbarContent"></button>
+		<div class="collapse" id="navbarContent">
+			<img src="{% static "/home/images/minecrunch.png" %}" style="height: 2rem;" />
+			<ul class="nav navbar-nav">
+			&nbsp;
+			{% menu_link "/" "Home" "fa-home" %}
+			{% menu_link "/modpacks" "Modpacks" "fa-folder-open" %}
+			{% menu_link "/servers" "Servers" "fa-play" %}
+			{% menu_link "/whitelist" "Join" "fa-unlock" %}
+			{% menu_link "/admin" "Log In" "fa-user" %}
+			</ul>
+		</div>
+	</nav>
 	{% block body-content %} 
 	{% endblock %}
 	{% block youtube-content %}
