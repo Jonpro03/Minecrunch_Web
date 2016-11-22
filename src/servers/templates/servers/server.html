@@ -4,13 +4,14 @@
 
 <div class="body-content">
     <h1>{{ server.name }}</h1>
-	<ul class="list-group">
+	<ul class="list-inline">
 		<li>
-			<strong>Modpack:</strong> <a href="{% url "modpacks:modpack"
-			server.modpack.slug %}">{{ server.modpack }}</a>
+			<strong>Modpack:</strong> {{ server.modpack }}
 		</li>
 		{% if server.address %}
-		<li><strong>Address:</strong> {{ server.address }}</li>
+		<li>
+			<strong>Address:</strong> {{ server.address }}
+		</li>
 		{% endif %}
 		{% if server.dynmap %}
 		<li>
