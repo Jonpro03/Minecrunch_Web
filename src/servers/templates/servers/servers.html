@@ -1,0 +1,29 @@
+{% extends "home/base.html" %}
+
+{% block body-content %}
+
+<div class="body-content">
+    <h1>Minecrunch Servers</h1>
+	<table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Server</th>
+            <th>Modpack</th>
+            <th>Address</th>
+        </tr>
+        </thead>
+        <tbody>
+		{% for server in servers %}
+        <tr>
+			<td>
+				<a href="{% url "server" server.slug %}">{{ server.name }}</a>
+			</td>
+            <td>{{ server.modpack }}</td>
+            <td>{{ server.address }}</td>
+        </tr>
+	    {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

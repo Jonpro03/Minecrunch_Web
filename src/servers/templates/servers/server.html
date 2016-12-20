@@ -1,0 +1,34 @@
+{% extends "home/base.html" %}
+
+{% block body-content %}
+
+<div class="body-content">
+    <h1>{{ server.name }}</h1>
+	<ul class="list-inline">
+		<li>
+			<strong>Modpack:</strong> {{ server.modpack }}
+		</li>
+		{% if server.address %}
+		<li>
+			<strong>Address:</strong> {{ server.address }}
+		</li>
+		{% endif %}
+		{% if server.dynmap %}
+		<li>
+			<strong>Dynmap:</strong><a href="{{ server.dynmap }}">
+			{{ server.dynmap }}</a>
+		</li>
+		{% endif %}
+	</ul>
+	<p class="well">
+		{{ server.desc }}
+	</p>
+	{% if server.screenshot %}
+	<p>
+		<img src="{{ server.screenshot.url }}" alt=
+		"A screenshot of the {{ server.name }} server">
+	</p>
+	{% endif %}
+</div>
+
+{% endblock %}
