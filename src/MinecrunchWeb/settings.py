@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'home',
     'modpacks',
     'whitelist',
+    'servers',
 ]
 
 MIDDLEWARE = [
