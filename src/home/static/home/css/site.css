@@ -5,8 +5,8 @@ src: url('/static/home/fonts/ProFontWindows.ttf');
 }
 
 .arrow {
-  position: fixed;
-  bottom: -3rem;
+  position: absolute;
+  bottom: 2rem;
   left: 50%;
   margin-left:-20px;
   width: 40px;
