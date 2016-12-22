@@ -1,16 +1,16 @@
 {% extends "home/base.html" %}
 {% block body-content %}
-<div class="parallax" id="home-content">
+<div class="parallax home-content-background" id="home-content">
 	<h1 class="container text-xs-center">MINECRUNCH.NET</h1>
+	<h3 class="faded text-xs-center">Welcome to the madness</h3>
 	<div class="flex-center">
 		<div class="container-fluid animated fadeInUp">
-			<div class="form-label">
-				<h4>SO CRUNCHY</h4>
-			</div>
-			<div class="container-fluid">
-				<div class="form-content">
-					<p>Some really important content!</p>
-
+			<div class="form-content" >						
+				<div class="embed-responsive embed-responsive-16by9">
+					<video autoplay="true" loop="true" class="main-video">
+						<source src="static/home/video/minecrunchintro_nosound.mp4" type="video/mp4">
+					</video>
+					<img src="static/home/images/laptop_frame.png" class="main-video-frame">
 				</div>
 			</div>&nbsp;
 		</div>
@@ -19,7 +19,7 @@
 </div>
 {% endblock %}
 {% block youtube-content %}
-<div class="parallax" id="youtube-content">
+<div class="parallax youtube-content-background" id="youtube-content">
 	<h1 class="container text-xs-center">YOUTUBE SERIES</h1>
 	<div class="flex-center">
 		<div class="container-fluid">
@@ -55,7 +55,7 @@
 </div>
 {% endblock %}
 {% block server-content %}
-<div class="parallax" id="server-content">
+<div class="parallax server-content-background" id="server-content">
 	<h1 class="container text-xs-center">MODDED SERVERS</h1>
 	<div class="flex-center">
 		<div class="container-fluid">

@@ -4,9 +4,25 @@ font-family: minecraft;
 src: url('/static/home/fonts/ProFontWindows.ttf');
 }
 
+.main-video{
+    position: absolute;
+    top: -12% !important;
+    bottom: 0;
+    left: 13% !important;
+    width: 74% !important;
+    height: 100%;
+    border: 0;
+}
+
+.main-video-frame {
+    position: absolute;
+    width: 100%;
+    height: 84%;
+}
+
 .arrow {
   position: absolute;
-  bottom: 2rem;
+  bottom: 4rem;
   left: 50%;
   margin-left:-20px;
   width: 40px;
@@ -45,21 +61,25 @@ src: url('/static/home/fonts/ProFontWindows.ttf');
     /* parallax effect */
     height: 100%;
     background-attachment: fixed;
-    background-position: center;
     background-repeat: no-repeat;
+}
+
+.home-content-background {
+	background-image: url('/static/home/images/2016-10-14.png');
+    background-position: center;
     background-size: cover;
 }
 
-#home-content {
-	background-image: url('/static/home/images/2016-10-14.png');
-}
-
-#youtube-content {
+.youtube-content-background {
 	background-image: url('/static/home/images/youtube.jpg');
+    background-position: center;
+    background-size: cover;
 }
 
-#server-content {
+.server-content-background {
 	background-image: url('/static/home/images/2016-10-16.png');
+    background-position: center;
+    background-size: cover;
 }
 
 .full-bg-img {
@@ -103,6 +123,7 @@ footer.page-footer {
 
 .flex-center {
 	color: #fff;
+    height: inherit;
 }
 
 .container {
@@ -110,8 +131,7 @@ footer.page-footer {
 }
 
 .container-fluid {
-	padding-left: 3em;
-	padding-right: 3em;
+    width: 90%;
 }
 
 .card {
@@ -257,7 +277,6 @@ footer.page-footer {
    float:right;
    font-size: 1.4em;
    padding-right: 1.4rem;
-   padding-top:20px;
 }
 .sub_icon
 {
@@ -295,4 +314,8 @@ footer.page-footer {
 
 .body-content {
 	padding: 5em;
+}
+
+.form-content {
+    max-width: 1600px;
 }
