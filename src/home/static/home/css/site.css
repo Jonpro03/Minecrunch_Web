@@ -89,6 +89,7 @@ src: url('/static/home/fonts/ProFontWindows.ttf');
 html, body, .view {
 	height: 100%;
 	font-family: 'minecraft';
+	color: #fff;
 }
 /* Navigation*/
 .navbar {
