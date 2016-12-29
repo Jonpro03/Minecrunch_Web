@@ -137,16 +137,17 @@ footer.page-footer {
 
 .card {
 	background-color:rgba(0, 0, 0, 0.6);
-	margin: 1em;
-	padding: 2em;
+	padding: 0.5em 2em 0.5em 2em;
+    max-width: 860px;
+    
 }
 
 .card-title {
-	padding-bottom: 1em;
+	padding-bottom: 0.5em;
 }
 
 .btn {
-	background: rgba(255,255,255,0.2);
+	background: rgba(0,0,0,0.4);
 }
 
 .view {

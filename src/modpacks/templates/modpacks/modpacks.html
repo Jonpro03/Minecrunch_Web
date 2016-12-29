@@ -1,24 +1,23 @@
 {% extends "home/base.html" %}
 
 {% block body-content %}
-<div class="static-page body-content server-content-background">
-	<h1 class="container text-xs-center">Modpacks</h1>
-	<div class="container-fluid animated fadeInUp">
+<div class="body-content server-content-background">
+	<h1 class="text-xs-center">Modpacks</h1>
+	&nbsp;
+	<div class="animated fadeInUp">
 	    {% for modpack in modpacks %}
-	    <div class="card">
-	    	<div class="card-block">
-			    <h3 class="form-label">{{ modpack.modpack_name }}</h3>
-			    {% if modpack.desc %}
-			    <h6 class="card-subtitle text-muted">
-			    	{{ modpack.desc }}
-			    </h6>
-			    {% endif %}
-		    </div>
-		    	{% if modpack.image %}
-		        <img class="img-fluid" src="{{ modpack.image.url }}">
+	    <div class="card container">
+			<div class="card-block">
+				<h3 class="form-label text-xs-center">{{ modpack.modpack_name }}</h3>
+				{% if modpack.desc %}
+				<h6 class="card-subtitle text-muted">{{ modpack.desc }}</h6>
+				{% endif %}
+			</div>
+			{% if modpack.image %}
+		        <img class="img-fluid hidden-xs-down" src="{{ modpack.image.url }}">
 		    	{% endif %}
-		    	<div class="card-block hidden-xs-down">
-			        <table class="table table-striped">
+		    	<div class="card-block">
+			        <table class="table table-hover table-sm">
 			        <thead>
 			        <tr>
 			            <th>Mod</th>
@@ -46,6 +45,7 @@
 			    </table>
 		    </div>
 	    </div>
+	    &nbsp;
 	    {% endfor %}
 </div>
 

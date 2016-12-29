@@ -92,3 +92,5 @@ ENV/
 
 # Ignore the database file
 **/db.sqlite3
+src/static
+src/media

@@ -1,18 +1,20 @@
-{% extends "home/base.html" %}
+{% extends "home/base.html" %} 
+{% load static %} 
 {% block body-content %}
 <div class="parallax home-content-background" id="home-content">
-	<h1 class="container text-xs-center">MINECRUNCH.NET</h1>
-	<h3 class="faded text-xs-center">Welcome to the madness</h3>
-	<div class="flex-center">
-		<div class="container-fluid animated fadeInUp">
-			<div class="col-xs-10 offset-xs-1 col-lg-6 offset-lg-3" >						
-				<div class="embed-responsive embed-responsive-16by9">
-					<video autoplay="true" loop="true" class="main-video">
-						<source src="static/home/video/minecrunchintro_nosound.mp4" type="video/mp4">
-					</video>
-					<img src="static/home/images/laptop_frame.png" class="main-video-frame">
-				</div>
-			</div>&nbsp;
+	<div class="animated fadeInUp">
+		<div class="container">
+			<h1 class="text-xs-center">MINECRUNCH.NET</h1>
+			<h3 class="faded text-xs-center">Welcome to the madness</h3>
+			&nbsp;
+			<div class="embed-responsive embed-responsive-16by9">
+				<video autoplay="true" loop="true" class="main-video">
+					<source src="{% static "home/video/minecrunchintro_nosound.mp4" %}"
+						type="video/mp4">
+				</video>
+				<img src="{% static "home/images/laptop_frame.png" %}" 
+					class="main-video-frame">
+			</div>
 		</div>
 	</div>
 	<a href="#youtube-content" class="arrow bounce"></a>
@@ -21,85 +23,96 @@
 {% block youtube-content %}
 <div class="parallax youtube-content-background" id="youtube-content">
 	<h1 class="text-xs-center">YOUTUBE SERIES</h1>
-	<h3 class="text-xs-center">Check out our <a href="https://www.youtube.com/channel/UCKUG5WESXj45TRNzMtVLVaA">channel!</a></h3>
-	<div class="flex-center">
-		<div class="container-fluid">
-			<div class="card col-md-5 offset-md-1 text-xs-center">
-				<div class="card-block">
-					<h2 class="card-title">Skybock Redux</h1>
-					<h6 class="card-subtitle text-muted hidden-sm-down">Will they
-						survive?</h6>
-				</div>
-				<a href="https://www.youtube.com/playlist?list=PLq2q_PEAofjnR4sEIXsVYniWQfv2xSStz">
-					<img class="rounded mx-auto d-block"
-						src="static/home/images/skyblocks.jpg"
-						alt="Youtube Skyblocks Playlist">
-				</a>
-				<div class="card-block">
-					<p class="card-text">Follow our heros through the many perils that face them
-					on the latest skyblocks map.</p>
-				</div>
+	<h3 class="text-xs-center">
+		Check out our
+		<a href="https://www.youtube.com/channel/UCKUG5WESXj45TRNzMtVLVaA">channel!</a>
+	</h3>
+	&nbsp;
+	<div class="container-fluid">
+		<div class="card col-md-5 text-xs-center">
+			<div class="card-block">
+				<h2 class="card-title">Skybock Redux</h2>
+				<h6 class="card-subtitle text-muted hidden-sm-down">Will they
+					survive?</h6>
 			</div>
-			<div class="card col-sm-5 push-md-1 hidden-sm-down text-xs-center">
-				<div class="card-block">
-					<h2 class="card-title">Buffoonery</h1>
+			<a
+				href="https://www.youtube.com/playlist?list=PLq2q_PEAofjnR4sEIXsVYniWQfv2xSStz">
+				<img class="rounded mx-auto d-block"
+					src="static/home/images/skyblocks.jpg"
+					alt="Youtube Skyblocks Playlist">
+			</a>
+			<div class="card-block">
+				<p class="card-text">Follow our heros through the many perils
+					that face them on the latest skyblocks map.</p>
+			</div>
+		</div>
+		<div
+			class="card col-md-5 float-xs-right hidden-sm-down text-xs-center">
+			<div class="card-block">
+				<h2 class="card-title">
+					Buffoonery
+					</h1>
 					<h6 class="card-subtitle text-muted">What did he just say?</h6>
-				</div>
-				<a href="https://www.youtube.com/playlist?list=PLq2q_PEAofjlTLCWDLr3rFmENCgaU3ZBW">
-					<img class="rounded mx-auto d-block"
-						src="static/home/images/buffoonery.jpg"
-						alt="Youtube Buffoonery Playlist">
-				</a>
-				<div class="card-block">
-					<p class="card-text">Try not to laugh as the Minecrunch team makes
-					complete asses of themselves. Viewer Discretion is advised.</p>
-				</div>
+			</div>
+			<a
+				href="https://www.youtube.com/playlist?list=PLq2q_PEAofjlTLCWDLr3rFmENCgaU3ZBW">
+				<img class="rounded mx-auto d-block"
+					src="static/home/images/buffoonery.jpg"
+					alt="Youtube Buffoonery Playlist">
+			</a>
+			<div class="card-block">
+				<p class="card-text">Try not to laugh as the Minecrunch team
+					makes complete asses of themselves. Viewer Discretion is advised.</p>
 			</div>
 		</div>
 	</div>
+	<a href="#server-content" class="arrow bounce"></a>
 </div>
-{% endblock %}
+{% endblock %} 
 {% block server-content %}
 <div class="parallax server-content-background" id="server-content">
-	<h1 class="container text-xs-center">MODDED SERVERS</h1>
-	<div class="flex-center">
-		<div class="container-fluid">
-			<div class="card col-md-5 offset-md-1 text-xs-center">
-				<div class="card-block">
-					<h2 class="card-title">Medieval</h2>
-					<h6 class="card-subtitle text-muted hidden-sm-down">Minecraft 1.7.10</h6>
-				</div>
-				<img class="rounded mx-auto d-block"
-					src="static/home/images/medieval.png"
-					alt="Card image">
-				<div class="card-block">
-					<p class="card-text">Play some of the best mods from Minecraft 1.7.10.
-					Caution: Highly Addictive!</p>
-				</div>
-				<button class="btn" href="#">Get the installer</button>
+	<h1 class="text-xs-center">MODDED MINECRAFT</h1>
+	&nbsp;
+	<div class="container-fluid">
+		<div class="card col-md-5 text-xs-center hidden-sm-down">
+			<div class="card-block">
+				<h2 class="card-title">Medieval</h2>
+				<h6 class="card-subtitle text-muted">Minecraft 1.7.10</h6>
 			</div>
-			<div class="card col-sm-5 push-md-1 hidden-sm-down text-xs-center">
-				<div class="card-block">
-					<h2 class="card-title">Cyberpunk</h2>
-					<h6 class="card-subtitle text-muted">Minecraft 1.10.2</h6>
-				</div>
-				<img class="rounded mx-auto d-block"
-					src="static/home/images/cyberpunk.png"
-					alt="Card image">
-				<div class="card-block">
-					<p class="card-text">Our bleeding edge modpack featuring the
+			<img class="rounded mx-auto d-block"
+				src="static/home/images/medieval.png" alt="Card image">
+			<div class="card-block">
+				<p class="card-text">Play some of the best mods from Minecraft
+					1.7.10. Caution: Highly Addictive!</p>
+			</div>
+			<button class="btn btn-default" href="#">Learn more</button>
+		</div>
+		<div class="card col-md-5 float-xs-right text-xs-center">
+			<div class="card-block">
+				<h2 class="card-title">Cyberpunk</h2>
+				<h6 class="card-subtitle text-muted hidden-sm-down">Minecraft
+					1.10.2</h6>
+			</div>
+			<img class="rounded mx-auto d-block"
+				src="static/home/images/cyberpunk.png" alt="Card image">
+			<div class="card-block">
+				<p class="card-text">Our bleeding edge modpack featuring the
 					best tech mods available for Minecraft 1.10.</p>
-				</div>
-				<button class="btn" href="#">Get the installer</button>
 			</div>
+			<button class="btn btn-default" href="#">Learn more</button>
 		</div>
 	</div>
+	<div class="container">
+		<button class="btn btn-lg btn-primary btn-block" href="#">Get the Installer</button>
+		<button class="btn btn-lg btn-secondary btn-block" href="#">View All Modpacks</button>
+	</div>
 </div>
-{% endblock %}
+{% endblock %} 
 {% block footer-content %}
 <footer class="page-footer center-on-small-only">
 	<div class="container-fluid">
 		<div class="col-xs-8 offset-xs-2">
+			&nbsp;
 			<h3>Who is MINECRUNCH?</h3>
 			<p>MINECRUNCH started out as a couple of friends playing a little
 				bit of Minecraft. It has since morphed into so much more, from our
@@ -109,19 +122,21 @@
 				Modpacks. We currently have a Medieval Minecrunch Modpack. Go to our
 				download section and get it, it is easy to install, just a click of
 				a button.</p>
-			<span> <img src="https://minotar.net/cube/tstreit1/150.png">
-				<img src="https://minotar.net/cube/jonpro03/150.png"> <img
-				src="https://minotar.net/cube/lo_windigo/150.png"> <img
-				src="https://minotar.net/cube/linuxchiq/150.png"> <img
-				src="https://minotar.net/cube/vk7hse/150.png"> <img
-				src="https://minotar.net/cube/saliktor/150.png"> <img
-				src="https://minotar.net/cube/21kai21/150.png">
+			<span class="hidden-xs-down">
+				<img src="https://minotar.net/cube/tstreit1/150.png">
+				<img src="https://minotar.net/cube/jonpro03/150.png">
+				<img src="https://minotar.net/cube/lo_windigo/150.png">
+				<img src="https://minotar.net/cube/linuxchiq/150.png">
+				<img src="https://minotar.net/cube/vk7hse/150.png">
+				<img src="https://minotar.net/cube/saliktor/150.png">
+				<img src="https://minotar.net/cube/21kai21/150.png">
 			</span>
 		</div>
 	</div>
 	<div class="footer-copyright">
 		<div class="container-fluid">
-			2016 Copyright: <a href="http://minecrunch.net"> MINECRUNCH </a>
+			2016 Copyright:
+			<a href="http://minecrunch.net"> MINECRUNCH </a>
 		</div>
 	</div>
 </footer>
