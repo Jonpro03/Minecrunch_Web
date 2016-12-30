@@ -2,31 +2,33 @@
 
 {% block body-content %}
 
-<div class="body-content home-content-background parallax">
+<div class="body-content home-content-background fixed-bg">
     <h1 class="text-xs-center">Minecrunch Servers</h1>
     &nbsp;
     <div class="animated fadeInUp container">
-    	<div class="card-deck">
+    	<div class="">
 			{% for server in servers %}
-				<div class="card">
-					<!-- Server image -->
-					{% if server.screenshot %}
-					<div class="view overlay hm-white-slight">
-						<img class="img-fluid" src="{{ server.screenshot.url }}" alt="{{ server.name }}">
-						<a href="{% url "server" server.slug %}">
-	            			<div class="mask"></div>
-	        			</a>
-					</div>
-					{% endif %}					
-					
-					<!-- Content -->
-					<div class="card-block">
-						<h4 class="card-title">{{ server.address }}</h4>
-						<h6 class="text-muted">Featuring the {{ server.modpack }} Minecrunch <a href="/modpacks#{{ server.modpack.slug }}"> <i class="fa fa-chevron-right"></i></a></h6>
-						<hr>
-						<p class="card-text">{{ server.desc }}</p>
-			            
-			            <a class="btn btn-secondary float-xs-right" href="{% url "server" server.slug %}">Get Started <i class="fa fa-chevron-right"></i></a>
+				<div class="col-md-6">
+					<div class="card">
+						<!-- Server image -->
+						{% if server.screenshot %}
+						<div class="view overlay hm-white-slight">
+							<img class="img-fluid" src="{{ server.screenshot.url }}" alt="{{ server.name }}">
+							<a href="{% url "server" server.slug %}">
+		            			<div class="mask"></div>
+		        			</a>
+						</div>
+						{% endif %}					
+						
+						<!-- Content -->
+						<div class="card-block">
+							<h4 class="card-title">{{ server.name.upper }}</h4>
+							<h6 class="text-muted">Featuring the {{ server.modpack }} Minecrunch <a href="/modpacks#{{ server.modpack.slug }}"> <i class="fa fa-chevron-right"></i></a></h6>
+							<hr>
+							<p class="card-text">{{ server.desc }}</p>
+				            
+				            <a class="btn btn-secondary float-xs-right" href="{% url "server" server.slug %}">Get Started <i class="fa fa-chevron-right"></i></a>
+			            </div>
 		            </div>
 	            </div>
 		    {% endfor %}	

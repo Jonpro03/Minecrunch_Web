@@ -64,6 +64,11 @@ src: url('/static/home/fonts/ProFontWindows.ttf');
     background-repeat: no-repeat;
 }
 
+.fixed-bg {
+	background-attachment: fixed;
+	min-height: 100%;
+}
+
 .home-content-background {
 	background-image: url('/static/home/images/2016-10-14.png');
     background-position: center;
@@ -103,8 +108,7 @@ html, body, .view {
 }
 
 .top-nav-collapse {
-	background-color: #37474F
-;
+	background-color: #37474F;
 }
 
 footer.page-footer {
@@ -136,13 +140,19 @@ footer.page-footer {
 }
 
 .card {
-	background-color:rgba(0, 0, 0, 0.9);
-    max-width: 8120px;
-    
+	margin: 0 1em 1em 1em;
+	padding: 0;
+	background-color:rgba(0, 0, 0, 0.9);   
 }
 
 .card-title {
 	padding-bottom: 0.5em;
+}
+
+.mask div.fa {
+	margin-top: 20%;
+	font-size: 8vw;
+	color: rgba(255,0,0,0.6);
 }
 
 .btn {
@@ -152,7 +162,7 @@ footer.page-footer {
 .view {
 	background:
 		url("/static/home/images/2016-10-14.png")
-		no-repeat center center fixed;
+		no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -314,7 +324,7 @@ footer.page-footer {
 }
 
 .body-content {
-	padding: 5em;
+	padding: 3em 0 2em 0;
 }
 
 .form-content {
