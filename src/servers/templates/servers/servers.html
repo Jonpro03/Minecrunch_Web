@@ -10,12 +10,14 @@
 			{% for server in servers %}
 				<div class="card">
 					<!-- Server image -->
+					{% if server.screenshot %}
 					<div class="view overlay hm-white-slight">
 						<img class="img-fluid" src="{{ server.screenshot.url }}" alt="{{ server.name }}">
 						<a href="{% url "server" server.slug %}">
 	            			<div class="mask"></div>
 	        			</a>
-					</div>					
+					</div>
+					{% endif %}					
 					
 					<!-- Content -->
 					<div class="card-block">
