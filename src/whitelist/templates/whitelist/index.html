@@ -1,28 +1,33 @@
 {% extends "home/base.html" %}
 
 {% block body-content %}
-<div class="static-page body-content home-content-background">
-	<div>
-		<h1 class="container text-xs-center">Whitelist Request</h1>
-		<div class="container-fluid animated fadeInUp">
+<div class="fixed-bg body-content home-content-background">
+	<div class="container">
+		<h1 class="text-xs-center">Whitelist Request</h1>
+		<hr>
+		<div class="animated fadeInUp">
 			<form method="post">
-				<div class="card card-dark">
-					<h3 class="card-title hidden-sm-down">Provide your details</h3>
-					{% csrf_token %}
-					{{ form.non_field_errors }}
-					<div class="md-form">
-						<label for="id_ign">{{ form.ign.label }}</label>
-						{{ form.ign }}
-						{{ form.ign.errors }}
-					</div>
-					&nbsp;
-					<div class="md-form">
-						<label for="id_email">{{ form.email.label }}</label>
-						{{ form.email }}
-						{{ form.email.errors }}
-					</div>
-					<div class="form-group">
-						<button class="btn btn-info" type="submit">Submit</button>
+				<div class="card">
+					<div class="card-block">
+						<h3 class="card-title hidden-xs-down">Provide your details</h3>
+						<h6 class="text-muted">Your whitelist request, if approved, will grant you access to all minecrunch.net servers.</h6>
+						{% csrf_token %}
+						{{ form.non_field_errors }}
+						&nbsp;
+						<div class="md-form">
+							<label for="id_ign">{{ form.ign.label }}</label>
+							{{ form.ign }}
+							{{ form.ign.errors }}
+						</div>
+						&nbsp;
+						<div class="md-form">
+							<label for="id_email">{{ form.email.label }}</label>
+							{{ form.email }}
+							{{ form.email.errors }}
+						</div>
+						<div class="form-group">
+							<button class="btn btn-info" type="submit">Submit</button>
+						</div>
 					</div>
 				</div>
 			</form>
