@@ -6,7 +6,7 @@
 	&nbsp;
 	<div class="animated fadeInUp">
 	    {% for modpack in modpacks %}
-	    <div class="card container">
+	    <div class="card container" id="{{ modpack.slug }}">
 			<div class="card-block">
 				<h3 class="form-label text-xs-center">{{ modpack.modpack_name }}</h3>
 				{% if modpack.desc %}

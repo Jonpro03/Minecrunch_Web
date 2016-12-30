@@ -2,29 +2,33 @@
 
 {% block body-content %}
 
-<div class="static-page body-content home-content-background">
+<div class="body-content home-content-background parallax">
     <h1 class="text-xs-center">Minecrunch Servers</h1>
-    <div class="container-fluid animated fadeInUp card">
-		<table class="table table-striped">
-	        <thead>
-	        <tr>
-	            <th>Server</th>
-	            <th>Modpack</th>
-	            <th>Address</th>
-	        </tr>
-	        </thead>
-	        <tbody>
+    &nbsp;
+    <div class="animated fadeInUp container">
+    	<div class="card-deck">
 			{% for server in servers %}
-	        <tr>
-				<td>
-					<a href="{% url "server" server.slug %}">{{ server.name }}</a>
-				</td>
-	            <td>{{ server.modpack }}</td>
-	            <td>{{ server.address }}</td>
-	        </tr>
-		    {% endfor %}
-	        </tbody>
-	    </table>
+				<div class="card">
+					<!-- Server image -->
+					<div class="view overlay hm-white-slight">
+						<img class="img-fluid" src="{{ server.screenshot.url }}" alt="{{ server.name }}">
+						<a href="{% url "server" server.slug %}">
+	            			<div class="mask"></div>
+	        			</a>
+					</div>					
+					
+					<!-- Content -->
+					<div class="card-block">
+						<h4 class="card-title">{{ server.address }}</h4>
+						<h6 class="text-muted">Featuring the {{ server.modpack }} Minecrunch <a href="/modpacks#{{ server.modpack.slug }}"> <i class="fa fa-chevron-right"></i></a></h6>
+						<hr>
+						<p class="card-text">{{ server.desc }}</p>
+			            
+			            <a class="btn btn-secondary float-xs-right" href="{% url "server" server.slug %}">Get Started <i class="fa fa-chevron-right"></i></a>
+		            </div>
+	            </div>
+		    {% endfor %}	
+	    </div>
     </div>
 </div>
 
